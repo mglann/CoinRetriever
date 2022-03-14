@@ -8,16 +8,16 @@ public class CoinRetriever {
             String mainResponse = ui.mainMenuPrompt();
             if (mainResponse.equals("1"))
             {
-                System.out.println("do something");
+                System.out.println("Did soemthing");
             }
             else if (mainResponse.equals("2"))
             {
-                System.out.println("do something else");
+                System.out.println("Did something else");
             }
-            else if (mainResponse.equals("3"))
+            else
             {
-                System.out.println("Quit");
-
+                System.out.println("Bye");
+                break;
             }
         }
     }
