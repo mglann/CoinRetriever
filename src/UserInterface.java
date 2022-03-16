@@ -1,32 +1,37 @@
 import javax.swing.*;
 import java.util.*;
 
-public class UserInterface {
-    private Scanner input = new Scanner(System.in);
+public class UserInterface
+{
+    private Scanner input;
 
-    public String mainMenuPrompt()
+    public UserInterface()
     {
-        boolean validInput = false;
-        String response =  null;
-        while(!validInput)
+        input = new Scanner(System.in);
+    }
+
+    public String inputMode()
+    {
+        String mode = "";
+        while (true)
         {
             System.out.println("Choose an option:");
-            System.out.println("1) Do something");
-            System.out.println("2) Do something else");
+            System.out.println("1) Ticker");
             System.out.println("Q) Quit");
+            System.out.println();
 
-            response = input.nextLine().toUpperCase();
+            mode = input.nextLine().toUpperCase();
 
-            if( response.equals("1") || response.equals("2") || response.equals("Q"))
+            if( mode.equals("1") ||  mode.equals("Q"))
             {
-                validInput = true;
+                break;
             }
             else
             {
-                System.out.println("READ THE DIRECTIONS!!!!!");
+                //displayErrorMessage
             }
         }
 
-        return response;
+        return mode;
     }
 }
