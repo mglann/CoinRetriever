@@ -28,10 +28,36 @@ public class UserInterface
             }
             else
             {
-                //displayErrorMessage
+                displayErrorMessage("Invalid Input!");
             }
         }
-
         return mode;
+    }
+
+    public String inputTicker()
+    {
+        System.out.println("Enter a Ticker:");
+        System.out.println("For example: BTC");
+        System.out.println();
+        String ticker = input.nextLine();
+        return ticker;
+    }
+
+    public void displayTickerErrorMessage()
+    {
+        String error = "Invalid Ticker, Please try a new Ticker";
+        displayErrorMessage(error);
+    }
+
+    public void displayErrorMessage(String msg)
+    {
+        System.out.println("************ERROR************");
+        System.out.println(msg);
+    }
+
+    public void displayCoinData(double currentPrice)
+    {
+        System.out.println("Current Price:" + currentPrice);
+        System.out.println();
     }
 }
