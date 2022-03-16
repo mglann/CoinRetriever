@@ -1,7 +1,7 @@
 import javax.swing.*;
 import java.util.*;
 
-public class CoinRetrieverUserInterface {
+public class UserInterface {
     private Scanner input = new Scanner(System.in);
 
     public String mainMenuPrompt()

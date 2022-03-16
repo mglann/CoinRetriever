@@ -1,7 +1,7 @@
 public class CoinRetriever {
     public static void main(String[] args)
     {
-        CoinRetrieverUserInterface ui = new CoinRetrieverUserInterface();
+        UserInterface ui = new UserInterface();
 
         while(true)
         {
