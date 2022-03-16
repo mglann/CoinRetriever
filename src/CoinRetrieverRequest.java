@@ -18,7 +18,7 @@ public class CoinRetrieverRequest
         return symbol;
     }
 
-    public boolean validateSymbol(String Symbol)
+    public boolean validateSymbol()
     {
         return true;
     }

@@ -3,6 +3,7 @@ public class CoinRetriever
     public static void main(String[] args)
     {
         UserInterface ui = new UserInterface();
+        CoinRetrieverRequest req = new CoinRetrieverRequest();
 
         while(true)
         {
