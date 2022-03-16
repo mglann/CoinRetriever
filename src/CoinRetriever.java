@@ -1,22 +1,19 @@
-public class CoinRetriever {
+public class CoinRetriever
+{
     public static void main(String[] args)
     {
         UserInterface ui = new UserInterface();
 
         while(true)
         {
-            String mainResponse = ui.mainMenuPrompt();
+            String mainResponse = ui.inputMode();
             if (mainResponse.equals("1"))
             {
-                System.out.println("Did soemthing");
-            }
-            else if (mainResponse.equals("2"))
-            {
-                System.out.println("Did something else");
+                System.out.println("Ticker");
             }
             else
             {
-                System.out.println("Bye");
+                System.out.println("Quit");
                 break;
             }
         }
