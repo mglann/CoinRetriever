@@ -6,7 +6,7 @@ import java.io.*;
 
 public class CoinRetrieverRequest
 {
-    private String symbolUrl =  "https://www.cryptonator.com/api/currencies";
+    private String symbolUrl =  "https://api.cryptonator.com/api/currencies";
     private static final String URL = "https://api.cryptonator.com/api/ticker";
     private String symbol;
     ArrayList<String> symbols =  new ArrayList<String>();
@@ -18,37 +18,41 @@ public class CoinRetrieverRequest
         BufferedReader in  = new BufferedReader(new InputStreamReader(symbolUrl.openStream()));
         java.net.URL jsonData =  symbolUrl;
         JSONParser parser =  new JSONParser();
-        JSONArray CoinRetrieverRequest = (JSONArray)(parser.parse(in));
+        Map CoinRetrieverRequest = (Map)(parser.parse(in));
+        JSONArray data = (JSONArray) CoinRetrieverRequest.get("rows");
 
-        for(int i = 0; i < symbols.size(); i++)
+        for(int i = 0; i < data.size(); i++)
         {
-            Map m = (Map)CoinRetrieverRequest.get(i);
-            symbols.add("code");
+            Map symbolData = (Map)data.get(i);
+            symbols.add((String)symbolData.get("code"));
         }
     }
 
-    public void setSymbol(String mainResponse)
+    public boolean validateSymbol(String mainResponse)
     {
-        this.symbol = symbol;
-    }
-
-
-    public boolean validateSymbol()
-    {
-        String urlSymbols = "";
-        String getSymbols = symbols.get();
-        for(int i = 0; i < symbols.size(); i++)
+        if(symbols.contains(mainResponse))
         {
-            if(urlSymbols == getSymbols)
-            {
-                return true;
-            }
+            return true;
         }
-
+        else
+        {
+            return false;
+        }
     }
 
-    public String getData()
+    public String setSymbol(String mainResponse)
     {
-        return "data";
+        boolean valid = validateSymbol(symbol);
+        if(true)
+        {
+            this.symbol = symbol;
+        }
+        return symbol;
     }
+
+    /*public String getData() throws Exception
+    {
+        String requestURL;
+        //requestURL +=
+    */}
 }
