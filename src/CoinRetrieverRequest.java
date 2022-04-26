@@ -50,9 +50,11 @@ public class CoinRetrieverRequest
         return symbol;
     }
 
-    /*public String getData() throws Exception
+    public CoinRetrieverResponse getCoinData() throws Exception
     {
         String requestURL;
-        //requestURL +=
-    */}
+        requestURL = URL + symbol + "-usd";
+        System.out.println(requestURL);
+        return null;
+    }
 }

@@ -17,13 +17,10 @@ public class CoinRetriever
                 System.out.println("Quit");
                 break;
             }
-            else
-            {
-                req.setSymbol(mainResponse);
-                String apiResponse = req.getData();
-                System.out.println("API response:" + apiResponse);
-            }
+            CoinRetrieverResponse response = req.getCoinData();
         }
+
+        
     }
 
 
