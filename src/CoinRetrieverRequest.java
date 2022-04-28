@@ -9,6 +9,7 @@ public class CoinRetrieverRequest
     private String symbolUrl =  "https://api.cryptonator.com/api/currencies";
     private static final String URL = "https://api.cryptonator.com/api/ticker";
     private String symbol;
+    private int selectedValue;
     ArrayList<String> symbols =  new ArrayList<String>();
 
     public void getSymbols() throws Exception
@@ -26,6 +27,11 @@ public class CoinRetrieverRequest
             Map symbolData = (Map)data.get(i);
             symbols.add((String)symbolData.get("code"));
         }
+    }
+
+    public ArrayList<String> getSymbolList()
+    {
+        return symbols;
     }
 
     public boolean validateSymbol(String mainResponse)

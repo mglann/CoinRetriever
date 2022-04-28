@@ -17,10 +17,10 @@ public class CoinRetriever
                 System.out.println("Quit");
                 break;
             }
-            CoinRetrieverResponse response = req.getCoinData();
+            ui.selectSymbol(req);
+            //CoinRetrieverResponse response = req.getCoinData();
         }
 
-        
     }
 
 

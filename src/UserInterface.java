@@ -39,8 +39,18 @@ public class UserInterface
         System.out.println("Enter a Ticker:");
         System.out.println("For example: BTC");
         System.out.println();
-        String ticker = input.nextLine();
-        return ticker;
+        String symbol = input.nextLine();
+        return symbol;
+    }
+
+    public int selectSymbol(CoinRetrieverRequest n) throws Exception {
+        ArrayList<String> symbols =  n.getSymbolList();
+        for(int i = 0; i < symbols.size(); i++)
+        {
+            System.out.println(i + ":" + symbols.get(i));
+        }
+
+        return -1;
     }
 
     public void displayTickerErrorMessage()
