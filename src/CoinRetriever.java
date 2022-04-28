@@ -12,9 +12,8 @@ public class CoinRetriever
         while(true)
         {
             String mainResponse = ui.inputMode();
-            if (mainResponse.equals("Q"))
+            if (mainResponse.toUpperCase().equals("Q"))
             {
-                System.out.println("Quit");
                 break;
             }
             ui.selectSymbol(req);

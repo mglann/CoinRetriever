@@ -19,10 +19,8 @@ public class UserInterface
             System.out.println("1) Ticker");
             System.out.println("Q) Quit");
             System.out.println();
-
             mode = input.nextLine().toUpperCase();
-
-            if( mode.equals("1") ||  mode.equals("Q"))
+            if( mode.toUpperCase().equals("1") ||  mode.toUpperCase().equals("Q"))
             {
                 break;
             }
@@ -49,7 +47,6 @@ public class UserInterface
         {
             System.out.println(i + ":" + symbols.get(i));
         }
-
         return -1;
     }
 
