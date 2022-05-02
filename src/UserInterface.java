@@ -34,7 +34,7 @@ public class UserInterface
 
     public String inputTicker()
     {
-        System.out.println("Enter a Ticker:");
+        System.out.println("Enter a Ticker from the List Shown:");
         System.out.println("For example: BTC");
         System.out.println();
         String symbol = input.nextLine();
@@ -67,4 +67,5 @@ public class UserInterface
         System.out.println("Current Price:" + currentPrice);
         System.out.println();
     }
+
 }

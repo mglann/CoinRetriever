@@ -17,6 +17,7 @@ public class CoinRetriever
                 break;
             }
             ui.selectSymbol(req);
+            ui.inputTicker();
             //CoinRetrieverResponse response = req.getCoinData();
         }
 
