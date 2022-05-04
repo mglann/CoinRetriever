@@ -32,7 +32,7 @@ public class UserInterface
         return mode;
     }
 
-    public String inputTicker()
+    public String inputSymbol()
     {
         System.out.println("Enter a Ticker from the List Shown:");
         System.out.println("For example: BTC");

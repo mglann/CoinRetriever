@@ -23,15 +23,4 @@ public class CoinRetrieverResponse
     {
         return allVolume;
     }
-
-    public void setSupportedMarkets(String supportedMarkets)
-    {
-        this.supportedMarkets = supportedMarkets;
-    }
-
-    public String getSupportedMarkets()
-    {
-        return supportedMarkets;
-    }
-
 }
