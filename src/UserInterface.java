@@ -3,6 +3,7 @@ import java.util.*;
 
 public class UserInterface
 {
+    CoinRetrieverResponse resp = new CoinRetrieverResponse();
     private Scanner input;
 
     public UserInterface()
@@ -45,7 +46,7 @@ public class UserInterface
         ArrayList<String> symbols =  n.getSymbolList();
         for(int i = 0; i < symbols.size(); i++)
         {
-            System.out.println(i + ":" + symbols.get(i));
+            System.out.println(symbols.get(i));
         }
         return -1;
     }
@@ -62,9 +63,11 @@ public class UserInterface
         System.out.println(msg);
     }
 
-    public void displayCoinData(double currentPrice)
+    public void displayCoinData(double currentPrice, double allVolume, double change)
     {
         System.out.println("Current Price:" + currentPrice);
+        System.out.println("Volume:" + allVolume);
+        System.out.println("24-Hour Change" + change);
         System.out.println();
     }
 

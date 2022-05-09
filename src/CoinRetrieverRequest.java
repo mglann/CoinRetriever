@@ -37,7 +37,7 @@ public class CoinRetrieverRequest
 
     public boolean validateSymbol(String symbolResponse)
     {
-        if(symbols.contains(symbolResponse))
+        if(symbols.contains(symbolResponse.toUpperCase()))
         {
             return true;
         }
@@ -47,15 +47,18 @@ public class CoinRetrieverRequest
         }
     }
 
-    public String setSymbol(String symbolResponse)
+    public boolean setSymbol(String symbolResponse)
     {
+        symbol =  null;
         boolean valid = validateSymbol(symbolResponse);
-        if(true)
+        if(valid)
         {
             this.symbol = symbol;
             symbol = symbolResponse;
+            return true;
         }
-        return symbol;
+
+        return false;
     }
 
     public CoinRetrieverResponse getSymbolData() throws Exception
@@ -65,13 +68,13 @@ public class CoinRetrieverRequest
         URL url = new URL(requestURL);
         System.out.println(requestURL);
 
-        //BufferedReader in  = new BufferedReader(new InputStreamReader(url.openStream()));
-        //java.net.URL jsonData =  url;
-        //JSONParser parser = new JSONParser();
+        BufferedReader in  = new BufferedReader(new InputStreamReader(url.openStream()));
+        java.net.URL jsonData =  url;
+        JSONParser parser = new JSONParser();
         //JSONObject data = (JSONObject) (parser.parse(in));
-        //Map dataTest = (Map)(parser.parse(in));
+        Map dataTest = (Map)(parser.parse(in));
         //JSONArray data = (JSONArray) dataTest.get("ticker");
-
+        System.out.println(dataTest);
         //Map mainCoinData = (Map)(data.get("ticker"));
         //Double price = (Double)(data.get("price"));
 

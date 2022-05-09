@@ -17,14 +17,23 @@ public class CoinRetriever
                 break;
             }
             ui.selectSymbol(req);
-            ui.inputSymbol();
-            String symbolResponse = ui.inputSymbol();
-            req.setSymbol(symbolResponse);
+            //ui.inputSymbol();
+            boolean validSymbol = false;
+            while(!validSymbol)
+            {
+                String symbolResponse = ui.inputSymbol();
+                if(req.setSymbol(symbolResponse))
+                {
+                    validSymbol = true;
+                }
+                else
+                {
+                    ui.displayTickerErrorMessage();
+                }
+            }
             req.getSymbolData();
-
             //CoinRetrieverResponse response = req.getCoinData();
         }
-
     }
 
 

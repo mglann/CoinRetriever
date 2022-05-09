@@ -2,9 +2,9 @@ public class CoinRetrieverResponse
 {
     private double currentPrice;
     private double allVolume;
-    private String supportedMarkets;
+    private double change;
 
-    public CoinRetrieverResponse(double currentPrice)
+    public void setCurrentPrice(double currentPrice)
     {
         this.currentPrice = currentPrice;
     }
@@ -22,5 +22,15 @@ public class CoinRetrieverResponse
     public double getAllVolume()
     {
         return allVolume;
+    }
+
+    public double getChange()
+    {
+        return change;
+    }
+
+    public void setChange(double change)
+    {
+        this.change = change;
     }
 }
