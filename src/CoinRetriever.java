@@ -26,6 +26,7 @@ public class CoinRetriever
                 {
                     validSymbol = true;
                 }
+
                 else
                 {
                     ui.displayTickerErrorMessage();

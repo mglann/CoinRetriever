@@ -67,16 +67,19 @@ public class CoinRetrieverRequest
         requestURL = URL + symbol + "-usd";
         URL url = new URL(requestURL);
         System.out.println(requestURL);
+        URLConnection hc = url.openConnection();
 
-        BufferedReader in  = new BufferedReader(new InputStreamReader(url.openStream()));
-        java.net.URL jsonData =  url;
+        hc.setRequestProperty("user-agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36");
+        hc.setRequestProperty("method", "get");
+        hc.setRequestProperty("cookie", "cf_clearance=Om3bhhVHa0_log8xg8mN8.MpJcMhbZEuIon6YSVFSKI-1652128497-0-150");
+        hc.connect();
+
+        //this is the request to our URL and it returns an text input stream that we can read from
+        BufferedReader in = new BufferedReader(new InputStreamReader(hc.getInputStream()));
         JSONParser parser = new JSONParser();
-        //JSONObject data = (JSONObject) (parser.parse(in));
-        Map dataTest = (Map)(parser.parse(in));
-        //JSONArray data = (JSONArray) dataTest.get("ticker");
-        System.out.println(dataTest);
-        //Map mainCoinData = (Map)(data.get("ticker"));
-        //Double price = (Double)(data.get("price"));
+        String json = "{\"ticker\":{\"base\":\"BTC\",\"target\":\"USD\",\"price\":\"31224.88974718\",\"volume\":\"65177.85871621\",\"change\":\"-45.41895185\"},\"timestamp\":1652130724,\"success\":true,\"error\":\"\"}";
+        Map ata = (Map)(parser.parse(json));
+        //Map ticker = (Map)()
 
         return null;
     }
