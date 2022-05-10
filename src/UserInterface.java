@@ -70,5 +70,4 @@ public class UserInterface
         System.out.println("24-Hour Change:" + " " + "$" + change);
         System.out.println();
     }
-
 }

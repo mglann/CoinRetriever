@@ -36,6 +36,4 @@ public class CoinRetriever
             ui.displayCoinData(response.getPrice(), response.getVolume(), response.getChange());
         }
     }
-
-
 }

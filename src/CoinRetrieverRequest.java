@@ -12,6 +12,8 @@ public class CoinRetrieverRequest
     private String symbol;
     private int selectedValue;
     ArrayList<String> symbols =  new ArrayList<String>();
+    String[] cfCookie = new String[];
+
 
     public void getSymbols() throws Exception
     {
@@ -28,6 +30,9 @@ public class CoinRetrieverRequest
             Map symbolList = (Map)data.get(i);
             symbols.add((String)symbolList.get("code"));
         }
+
+        //URLConnection cf = symbolUrl.openConnection();
+        //cf.getRequestProperties("cookie");
     }
 
     public ArrayList<String> getSymbolList()
@@ -67,8 +72,8 @@ public class CoinRetrieverRequest
         requestURL = URL + symbol + "-usd";
         URL url = new URL(requestURL);
         System.out.println(requestURL);
-        URLConnection hc = url.openConnection();
 
+        URLConnection hc = url.openConnection();
         hc.setRequestProperty("user-agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36");
         hc.setRequestProperty("method", "get");
         hc.setRequestProperty("cookie", "cf_clearance=31a5iWqPajSodMw63bYTTsk3sucU0IjhK4sgTgFTEXw-1652210112-0-150");
