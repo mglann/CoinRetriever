@@ -12,7 +12,6 @@ public class CoinRetrieverRequest
     private String symbol;
     private int selectedValue;
     ArrayList<String> symbols =  new ArrayList<String>();
-    String[] cfCookie = new String[];
 
 
     public void getSymbols() throws Exception
