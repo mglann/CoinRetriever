@@ -75,15 +75,13 @@ public class CoinRetrieverRequest
         URLConnection hc = url.openConnection();
         hc.setRequestProperty("user-agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36");
         hc.setRequestProperty("method", "get");
-        hc.setRequestProperty("cookie", "cf_clearance=31a5iWqPajSodMw63bYTTsk3sucU0IjhK4sgTgFTEXw-1652210112-0-150");
+        hc.setRequestProperty("cookie", "cf_clearance=8YFNIgSn8J8Bw9A5Vfk1reiwyVdQfAGFsd5Hayhz_YU-1652212277-0-150");
         hc.connect();
 
         //this is the request to our URL and it returns an text input stream that we can read from
         BufferedReader in = new BufferedReader(new InputStreamReader(hc.getInputStream()));
         JSONParser parser = new JSONParser();
         JSONObject symbolData = (JSONObject)parser.parse(in);
-        //String json = "{\"ticker\":{\"base\":\"BTC\",\"target\":\"USD\",\"price\":\"31224.88974718\",\"volume\":\"65177.85871621\",\"change\":\"-45.41895185\"},\"timestamp\":1652130724,\"success\":true,\"error\":\"\"}";
-        //Map data = (Map)(parser.parse(in));
         Map mainSymbolData = (Map)symbolData.get("ticker");
         String price1 = (String)mainSymbolData.get("price");
         String volume1 = (String)mainSymbolData.get("volume");
