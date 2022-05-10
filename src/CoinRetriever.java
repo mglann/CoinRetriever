@@ -32,9 +32,8 @@ public class CoinRetriever
                     ui.displayTickerErrorMessage();
                 }
             }
-            req.getSymbolData();
             CoinRetrieverResponse response = req.getSymbolData();
-            ui.displayCoinData(response.getPrice(), response.getVolume(), response. getChange());
+            ui.displayCoinData(response.getPrice(), response.getVolume(), response.getChange());
         }
     }
 

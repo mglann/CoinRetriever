@@ -64,9 +64,9 @@ public class UserInterface
 
     public void displayCoinData(double currentPrice, double allVolume, double change)
     {
-        System.out.println("Current Price:" + currentPrice);
-        System.out.println("Volume:" + allVolume);
-        System.out.println("24-Hour Change" + change);
+        System.out.println("Current Price:" + " " + currentPrice);
+        System.out.println("Volume:" + " " + allVolume);
+        System.out.println("24-Hour Change" + " " + change);
         System.out.println();
     }
 
