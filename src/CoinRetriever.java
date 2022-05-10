@@ -33,7 +33,8 @@ public class CoinRetriever
                 }
             }
             req.getSymbolData();
-            //CoinRetrieverResponse response = req.getCoinData();
+            CoinRetrieverResponse response = req.getSymbolData();
+            ui.displayCoinData(response.getPrice(), response.getVolume(), response. getChange());
         }
     }
 

@@ -1,36 +1,28 @@
 public class CoinRetrieverResponse
 {
-    private double currentPrice;
-    private double allVolume;
+    private double price;
+    private double volume;
     private double change;
 
-    public void setCurrentPrice(double currentPrice)
+    public CoinRetrieverResponse(double price, double volume, double change)
     {
-        this.currentPrice = currentPrice;
+        this.price = price;
+        this.volume = volume;
+        this.change = change;
     }
 
-    public double getCurrentPrice()
+    public double getPrice()
     {
-        return currentPrice;
+        return price;
     }
 
-    public void setAllVolume(double allVolume)
+    public double getVolume()
     {
-        this.allVolume = allVolume;
-    }
-
-    public double getAllVolume()
-    {
-        return allVolume;
+        return volume;
     }
 
     public double getChange()
     {
         return change;
-    }
-
-    public void setChange(double change)
-    {
-        this.change = change;
     }
 }

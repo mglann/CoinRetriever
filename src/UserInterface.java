@@ -3,7 +3,6 @@ import java.util.*;
 
 public class UserInterface
 {
-    CoinRetrieverResponse resp = new CoinRetrieverResponse();
     private Scanner input;
 
     public UserInterface()
