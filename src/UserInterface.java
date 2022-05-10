@@ -38,6 +38,7 @@ public class UserInterface
         System.out.println("For example: BTC");
         System.out.println();
         String symbol = input.nextLine();
+        System.out.println();
         return symbol;
     }
 
@@ -66,7 +67,7 @@ public class UserInterface
     {
         System.out.println("Current Price:" + " " + currentPrice);
         System.out.println("Volume:" + " " + allVolume);
-        System.out.println("24-Hour Change" + " " + change);
+        System.out.println("24-Hour Change:" + " " + change);
         System.out.println();
     }
 
